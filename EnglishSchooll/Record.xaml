@@ -1,0 +1,38 @@
+﻿<Page x:Class="EnglishSchooll.Record"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EnglishSchooll"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Record">
+
+    <Grid HorizontalAlignment="Center" >
+        <StackPanel>
+            <TextBlock Text="Добавление записей" FontSize="20" FontFamily="Times New Roman" FontStyle="Italic" HorizontalAlignment="Center"/>
+            <Border BorderBrush="Azure" BorderThickness="2" CornerRadius="5" Padding="10,0,10,5">
+                <StackPanel Orientation="Vertical" RenderTransformOrigin="1.013,0.476" >
+                    <StackPanel>
+                        <TextBlock Name="Title" Text=""/>
+                        <TextBlock Name="DurationInMinute" Text=""/>
+                    </StackPanel>
+                    <StackPanel Width="200">
+
+                        <TextBlock Text="Выберите пользователя"/>
+                        <ComboBox Name="CBuser"></ComboBox>
+
+                        <TextBlock Text="Выберите дату"/>
+                        <DatePicker Name="DPdate"/>
+
+                        <TextBlock Text="Выберите время"/>
+                        <TextBox Name="Time" TextChanged="TextBox_TextChanged"/>
+
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <Button Name="Breg" Content="Записать" Margin="0,10,0,10" Click="Breg_Click"/>
+            <Label Name="Lback" Style="{StaticResource Slableback}" Content="Вернуться обратно" MouseLeftButtonUp ="Lback_MouseLeftButtonUp" />
+        </StackPanel>
+    </Grid>
+</Page>

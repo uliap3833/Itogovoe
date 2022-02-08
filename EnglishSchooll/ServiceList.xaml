@@ -1,0 +1,63 @@
+﻿<Page x:Class="EnglishSchooll.ServiceList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EnglishSchooll"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ServiceList">
+
+
+    <Page.Background>
+        <SolidColorBrush Opacity="0"/>
+    </Page.Background>
+
+    <Grid>
+        <StackPanel>
+            <ListView Name ="LVCelebration" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Height="400" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <ListView.Background>
+                    <!--<RadialGradientBrush GradientOrigin="0.5,0.5">
+                        <GradientStop Color="MediumVioletRed" Offset="0.6"/>
+                        <GradientStop Color="MediumVioletRed" Offset="0.4"/>
+                        <GradientStop Color="Purple" Offset="1"/>
+                        <GradientStop Color="MediumVioletRed" Offset="0.1"/>
+                        <GradientStop Color="MediumVioletRed" Offset="0.9"/>
+                    </RadialGradientBrush>-->
+                    <SolidColorBrush Color="Gray" Opacity="0"/>
+                </ListView.Background>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="Azure" BorderThickness="2" Background="{Binding ColorDate}">
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Source="{Binding MainImagePath}" Width="250" Height="250"></Image>
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical">
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="{Binding Title}" Style="{StaticResource Stblockorder}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding CostInt}" TextDecorations="{Binding IsDiscount}"></TextBlock>
+                                        <TextBlock Text="{Binding CostLable}" Style="{StaticResource Stblockorder}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Uid="{Binding ID}" Background="{Binding ColorCell}"  Content="Удалить" HorizontalAlignment="Left" Click="Button_Click"/>
+                                        <Button Uid="{Binding ID}" Background="{Binding ColorCell}" Content="Редактировать" HorizontalAlignment="Left" Margin="10,0,0,0" Click="Button_Click_1"/>
+                                        <Button Uid="{Binding ID}" Background="{Binding ColorCell}" Content="Записать" HorizontalAlignment="Left" Margin="10,0,0,0" Click="Button_Click_2"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Name="Ladd" Style="{StaticResource Slableback}" Content="Добавить запись" MouseLeftButtonUp ="Ladd_MouseLeftButtonUp"/>
+        </StackPanel>
+    </Grid>
+</Page>
